@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarIQ - Rozpoznaj dowolny samochód</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo-container">
+                    <a href="#" class="logo-link">
+                        <img src="/static/images/logo_d.png" alt="Logo firmy" class="logo-icon">
+                        CarIQ
+                    </a>
+                </div>
+                
+                <div class="hamburger" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div class="nav-links" id="menu">
+                    <a href="#how-it-works" onclick="toggleMenu()">Jak To Działa</a>
+                    <a href="#upload" class="btn btn-primary" onclick="toggleMenu()">Spróbuj teraz</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container" style="display:flex; align-items:center; flex-wrap: wrap;">
+            <div class="hero-content">
+                <h1>Rozpoznaj dowolny samochód</h1>
+                <p>Prześlij zdjęcie i pozwól naszej zaawansowanej sztucznej inteligencji natychmiast zidentyfikować markę dowolnego pojazdu. Szybko, dokładnie i niezwykle łatwo.</p>
+
+                <a href="#upload" class="btn btn-primary btn-large">Spróbuj teraz</a>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h4>99,2%</h4>
+                        <span>Dopasowanie</span>
+                    </div>
+                    <div class="stat-item">
+                        <h4>500K+</h4>
+                        <span>Zidentyfikowanych<br>samochodów</span>
+                    </div>
+                    <div class="stat-item">
+                        <h4>&lt;5s</h4>
+                        <span>Czas identyfikacji</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="/static/images/logo_d.png" alt="Grafika samochodu" class="car-graphic">
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>Jak To Działa</h2>
+                <p>Prześlij zdjęcie i pozwól naszej zaawansowanej sztucznej inteligencji natychmiast zidentyfikować markę dowolnego pojazdu.</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <img src="/static/images/jtd_ikona1.png" alt="Prześlij zdjęcie" class="step-icon">
+                    <h3>Prześlij zdjęcie</h3>
+                    <p>Przeciągnij i upuść lub kliknij, aby przesłać.</p>
+                </div>
+                <div class="step-card">
+                    <img src="/static/images/jtd_ikona2.png" alt="Analiza AI" class="step-icon">
+                    <h3>Analiza AI</h3>
+                    <p>Nasza zaawansowana sztuczna inteligencja analizuje obraz i porównuje go z bazą danych.</p>
+                </div>
+                <div class="step-card">
+                    <img src="/static/images/jtd_ikona3.png" alt="Uzyskaj wyniki" class="step-icon">
+                    <h3>Uzyskaj wyniki</h3>
+                    <p>Otrzymaj natychmiastową identyfikację marki samochodu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div>
+                    <img src="/static/images/i1.png" class="stat-circle">
+                    <h3>10,000+</h3>
+                    <p style="color:#94a3b8; font-size:16px;">Modeli samochodów</p>
+                </div>
+                <div>
+                    <img src="/static/images/i2.png" class="stat-circle">
+                    <h3>10,000+</h3>
+                    <p style="color:#94a3b8; font-size:16px;">Użytkowników</p>
+                </div>
+                <div>
+                    <img src="/static/images/i3.png" class="stat-circle">
+                    <h3>10,000+</h3>
+                    <p style="color:#94a3b8; font-size:16px;">Analiz dziennie</p>
+                </div>
+                <div>
+                    <img src="/static/images/i4.png" class="stat-circle">
+                    <h3>10,000+</h3>
+                    <p style="color:#94a3b8; font-size:16px;">Nagród</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="upload-section" id="upload">
+        <div class="container">
+            <div class="section-header">
+                <h2>Spróbuj Teraz</h2>
+                <p>Przeciągnij i upuść lub kliknij, aby przesłać.</p>
+            </div>
+
+            <div class="upload-box" id="drop-zone" style="cursor: pointer;">
+                <input type="file" id="fileInput" accept="image/*" hidden>
+
+                <div class="icon-wrapper">
+                    <img src="/static/images/uploadpho1.png" class="upload-icon static" alt="Upload">
+                    <img src="/static/images/uploadpho2.png" class="upload-icon hover" alt="Upload Hover">
+                </div>
+                <h3>Prześlij zdjęcie samochodu</h3>
+                <p style="color:#94a3b8; margin-top:10px;">Przeciągnij i upuść lub kliknij, aby przesłać</p>
+                <p style="color:#64748b; font-size:12px; margin-top:5px;">JPG, PNG</p>
+            </div>
+
+            <div id="loading" style="display:none; text-align:center; margin-top:20px;">
+                <p style="color: white; font-size: 1.2rem; font-family: 'Exo 2', sans-serif;">
+                    Analizowanie pojazdu... 🚗
+                </p>
+            </div>
+
+            <div id="result-container" style="display:none; margin-top: 30px; background: #1e293b; padding: 20px; border-radius: 10px; border: 1px solid #334155; color: white;">
+                <h3 style="margin-bottom: 15px; color: #3b82f6; font-family: 'Exo 2', sans-serif;">Wynik analizy:</h3>
+                <img id="/static/images/result-image-preview" src="" style="display: none; margin-bottom: 15px;">
+                <div id="result-content" style="line-height: 1.6;"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
